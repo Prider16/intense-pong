@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://634rpgkijtod"]
+
+[ext_resource type="Script" path="res://Scripts/Bat2.gd" id="1_3bvok"]
+[ext_resource type="Texture2D" uid="uid://xcel7iyh6g2o" path="res://Assets/ScrollBar_Blank_Scroller.png" id="2_ypubb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7yv0f"]
+radius = 14.0
+height = 118.0
+
+[node name="Bat2" type="CharacterBody2D"]
+script = ExtResource("1_3bvok")
+
+[node name="Bat image" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -2.38419e-07)
+rotation = 1.5708
+scale = Vector2(0.217282, 0.217282)
+texture = ExtResource("2_ypubb")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7yv0f")

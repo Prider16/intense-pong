@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgbjqgm0rokkh"]
+
+[ext_resource type="Script" path="res://Scripts/Fishes.gd" id="1_uc8l0"]
+[ext_resource type="PackedScene" uid="uid://bhc63rlm65yk5" path="res://Scenes/Fishes/fish_1.tscn" id="2_gi2mq"]
+[ext_resource type="PackedScene" uid="uid://bhwniyg76gn1o" path="res://Scenes/Fishes/Fish_2.tscn" id="3_4f0yr"]
+[ext_resource type="PackedScene" uid="uid://dnpxuwjkjfvyg" path="res://Scenes/Fishes/fish_3.tscn" id="4_s6x53"]
+[ext_resource type="PackedScene" uid="uid://buct8hqmdrwbb" path="res://Scenes/Fishes/jelly_fish_1.tscn" id="5_vo7u1"]
+[ext_resource type="PackedScene" uid="uid://fg7kxc83lqwa" path="res://Scenes/Fishes/sea_angler.tscn" id="6_xe2d1"]
+[ext_resource type="PackedScene" uid="uid://b0octdfp4eevq" path="res://Scenes/Fishes/shark.tscn" id="7_aii8o"]
+[ext_resource type="PackedScene" uid="uid://644jswx30nee" path="res://Scenes/Fishes/sword_fish.tscn" id="8_85ckj"]
+
+[node name="Fishes" type="AnimationPlayer"]
+script = ExtResource("1_uc8l0")
+
+[node name="Fish1" parent="." instance=ExtResource("2_gi2mq")]
+
+[node name="Fish1 Timer" type="Timer" parent="Fish1"]
+wait_time = 3.0
+
+[node name="Fish2" parent="." instance=ExtResource("3_4f0yr")]
+autoplay = "Move"
+
+[node name="Fish3" parent="." instance=ExtResource("4_s6x53")]
+autoplay = "Move"
+
+[node name="Jelly Fish1" parent="." instance=ExtResource("5_vo7u1")]
+autoplay = "Move"
+
+[node name="Sea angler" parent="." instance=ExtResource("6_xe2d1")]
+
+[node name="Angler Timer" type="Timer" parent="Sea angler"]
+wait_time = 3.0
+
+[node name="Shark" parent="." instance=ExtResource("7_aii8o")]
+autoplay = "Move"
+
+[node name="Sword Fish" parent="." instance=ExtResource("8_85ckj")]
+autoplay = "Move"
+
+[connection signal="timeout" from="Fish1/Fish1 Timer" to="." method="_on_fish_1_timer_timeout"]
+[connection signal="timeout" from="Sea angler/Angler Timer" to="." method="_on_angler_timer_timeout"]

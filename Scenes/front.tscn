@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://citxx2fhd1ned"]
+
+[ext_resource type="Script" path="res://Scripts/front.gd" id="1_0n5ho"]
+[ext_resource type="Texture2D" uid="uid://bgrnq0ecf3ywy" path="res://Assets/images.jpeg" id="1_cxrcg"]
+[ext_resource type="FontFile" uid="uid://dfeuc6gcgqd5e" path="res://Assets/VCRFont.ttf" id="1_v6xvv"]
+[ext_resource type="AudioStream" uid="uid://k1jxj1ili6iw" path="res://Assets/Sunds/SFX_UI_Cancel.wav" id="4_mi7h5"]
+[ext_resource type="AudioStream" uid="uid://bqojwl1prog82" path="res://Assets/Sunds/Click_02.ogg" id="5_n2jii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ndek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7c47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnotv"]
+
+[node name="Front" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0n5ho")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1501.0
+offset_bottom = 797.0
+texture = ExtResource("1_cxrcg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 131.0
+offset_right = 1323.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v6xvv")
+theme_override_font_sizes/font_size = 95
+text = "| Intense Pong |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 367.0
+offset_right = 853.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v6xvv")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6ndek")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6ndek")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6ndek")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6ndek")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6ndek")
+action_mode = 0
+text = "Play"
+icon_alignment = 1
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Play"]
+position = Vector2(-605, -367)
+stream = ExtResource("5_n2jii")
+
+[node name="How_to" type="Button" parent="."]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 480.0
+offset_right = 1007.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v6xvv")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g7c47")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g7c47")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g7c47")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g7c47")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g7c47")
+text = "How to play?"
+
+[node name="Click2" type="AudioStreamPlayer2D" parent="How_to"]
+position = Vector2(-489, -480)
+stream = ExtResource("5_n2jii")
+
+[node name="Click_back" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mi7h5")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 615.0
+offset_right = 805.0
+offset_bottom = 672.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v6xvv")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnotv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gnotv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gnotv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gnotv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gnotv")
+text = "Exit
+"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="finished" from="Play/Click" to="." method="_on_click_finished"]
+[connection signal="pressed" from="How_to" to="." method="_on_how_to_pressed"]
+[connection signal="finished" from="How_to/Click2" to="." method="_on_click_2_finished"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

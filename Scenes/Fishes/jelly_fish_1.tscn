@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://buct8hqmdrwbb"]
+
+[ext_resource type="Texture2D" uid="uid://chefuak4r4ybp" path="res://Assets/UnderWater/JellyFish - 32x16/JellyFish.png" id="1_ifxxd"]
+
+[sub_resource type="Animation" id="Animation_qsy55"]
+resource_name = "Move"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jelly Fish1/Jelly Fish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-100, 150), Vector2(1600, 150)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djqfd"]
+_data = {
+"Move": SubResource("Animation_qsy55")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvg16"]
+atlas = ExtResource("1_ifxxd")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmd0n"]
+atlas = ExtResource("1_ifxxd")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgsoc"]
+atlas = ExtResource("1_ifxxd")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veqh6"]
+atlas = ExtResource("1_ifxxd")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qssac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvg16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmd0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgsoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veqh6")
+}],
+"loop": true,
+"name": &"Fish",
+"speed": 3.0
+}]
+
+[node name="Jelly Fish1" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_djqfd")
+}
+
+[node name="Jelly Fish" type="AnimatedSprite2D" parent="."]
+position = Vector2(-100, 150)
+scale = Vector2(3.01563, 3.71875)
+sprite_frames = SubResource("SpriteFrames_qssac")
+animation = &"Fish"
+autoplay = "Fish"
+frame_progress = 0.524566

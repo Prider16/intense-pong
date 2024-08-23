@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://8416e20js142"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_lxhor"]
+[ext_resource type="Texture2D" uid="uid://xcel7iyh6g2o" path="res://Assets/ScrollBar_Blank_Scroller.png" id="2_qdmu2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7oimn"]
+radius = 25.0
+height = 132.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3jhyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a882"]
+size = Vector2(1501, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(110, 596)
+collision_mask = 3
+script = ExtResource("1_lxhor")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+rotation = 1.5708
+scale = Vector2(0.243422, 0.356781)
+texture = ExtResource("2_qdmu2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_7oimn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(136, 772)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_3jhyy")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(439, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_3a882")

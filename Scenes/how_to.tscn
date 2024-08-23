@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://hff1gig2xtvv"]
+
+[ext_resource type="Texture2D" uid="uid://dvo8k6rgevjt1" path="res://Assets/computer-mouse-peripheral-input-devices-pc-mouse-removebg-preview.png" id="1_u2uja"]
+[ext_resource type="Script" path="res://Scripts/how_to.gd" id="1_wmnwp"]
+[ext_resource type="FontFile" uid="uid://dfeuc6gcgqd5e" path="res://Assets/VCRFont.ttf" id="2_prl64"]
+[ext_resource type="AudioStream" uid="uid://bqojwl1prog82" path="res://Assets/Sunds/Click_02.ogg" id="4_pwryj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f45fk"]
+
+[node name="How to" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmnwp")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1499.0
+offset_bottom = 796.0
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="LeftMouse" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 16.0
+offset_right = 533.0
+offset_bottom = 516.0
+texture = ExtResource("1_u2uja")
+
+[node name="Text" type="Label" parent="LeftMouse"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 485.0
+offset_right = 522.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("2_prl64")
+theme_override_font_sizes/font_size = 35
+text = "To increase the Left 
+hand side Bar, you need 
+to press and hold the 
+Left mouse Button."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightMouse" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 957.0
+offset_top = 6.0
+offset_right = 1457.0
+offset_bottom = 506.0
+texture = ExtResource("1_u2uja")
+flip_h = true
+
+[node name="Text" type="Label" parent="RightMouse"]
+offset_left = -16.0
+offset_top = 483.0
+offset_right = 505.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("2_prl64")
+theme_override_font_sizes/font_size = 35
+text = "To increase the Right
+hand side Bar, you need 
+to press and hold the 
+Right mouse Button."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Note" type="Label" parent="."]
+offset_left = 429.0
+offset_top = 185.0
+offset_right = 1067.0
+offset_bottom = 330.0
+theme_override_fonts/font = ExtResource("2_prl64")
+theme_override_font_sizes/font_size = 35
+text = "(Please note that once you 
+release the button, the 
+gravity will pull the bar 
+towards him.)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 721.0
+offset_right = 126.0
+offset_bottom = 790.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f45fk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_f45fk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f45fk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f45fk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f45fk")
+action_mode = 0
+text = "Back"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-605, -367)
+stream = ExtResource("4_pwryj")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="Click" to="." method="_on_click_finished"]

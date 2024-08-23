@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b66k8bqbevruv"]
+
+[ext_resource type="AudioStream" uid="uid://djni6vo08ph40" path="res://Assets/Sunds/703713__zhr__chill-background-music-2.wav" id="1_rnsic"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_rnsic")
+volume_db = -14.995
+autoplay = true

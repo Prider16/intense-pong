@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyympi5s3f44a"]
+
+[ext_resource type="Texture2D" uid="uid://bgrnq0ecf3ywy" path="res://Assets/images.jpeg" id="1_0nowu"]
+[ext_resource type="Script" path="res://Scripts/over.gd" id="1_7f7po"]
+[ext_resource type="FontFile" uid="uid://dfeuc6gcgqd5e" path="res://Assets/VCRFont.ttf" id="2_uqs7i"]
+[ext_resource type="AudioStream" uid="uid://bqojwl1prog82" path="res://Assets/Sunds/Click_02.ogg" id="3_hlta8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3s7b"]
+
+[node name="Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7f7po")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1501.0
+offset_bottom = 797.0
+texture = ExtResource("1_0nowu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 190.0
+offset_top = 131.0
+offset_right = 1323.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uqs7i")
+theme_override_font_sizes/font_size = 120
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 466.0
+offset_top = 393.0
+offset_right = 961.0
+offset_bottom = 476.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_uqs7i")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j3s7b")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3s7b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j3s7b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j3s7b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j3s7b")
+action_mode = 0
+text = "Main Menu
+"
+icon_alignment = 1
+
+[node name="Click" type="AudioStreamPlayer2D" parent="Play"]
+position = Vector2(-605, -367)
+stream = ExtResource("3_hlta8")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="finished" from="Play/Click" to="." method="_on_click_finished"]

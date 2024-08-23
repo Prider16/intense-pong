@@ -1,0 +1,184 @@
+[gd_scene load_steps=24 format=3 uid="uid://644jswx30nee"]
+
+[ext_resource type="Texture2D" uid="uid://q3u5alu3v8q5" path="res://Assets/UnderWater/SwordFish - 48x32/SwordFish.png" id="1_s2abd"]
+[ext_resource type="Texture2D" uid="uid://bpln1y1qbseer" path="res://Assets/UnderWater/Bubble - 8x8.png" id="2_f1an5"]
+
+[sub_resource type="Animation" id="Animation_tpiir"]
+resource_name = "Move"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword Fish/Sword Fish:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1600, 325), Vector2(-100, 325)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0m71"]
+_data = {
+"Move": SubResource("Animation_tpiir")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7xq6"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4h1p"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm30m"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_504xn"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rht3"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu8v5"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfjo5"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oq3i"]
+atlas = ExtResource("1_s2abd")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvi2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7xq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4h1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm30m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_504xn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rht3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu8v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfjo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oq3i")
+}],
+"loop": true,
+"name": &"Fish",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhw2t"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c1tn"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svy1k"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euxqa"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h1lg"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gb1v"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn35n"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(48, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_330j4"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(56, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nrgx"]
+atlas = ExtResource("2_f1an5")
+region = Rect2(64, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5s36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhw2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c1tn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svy1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euxqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h1lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gb1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn35n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_330j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nrgx")
+}],
+"loop": true,
+"name": &"Bubble",
+"speed": 5.0
+}]
+
+[node name="Sword Fish" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_k0m71")
+}
+
+[node name="Sword Fish" type="AnimatedSprite2D" parent="."]
+position = Vector2(1600, 325)
+scale = Vector2(2.86458, 3.28125)
+sprite_frames = SubResource("SpriteFrames_qvi2j")
+animation = &"Fish"
+autoplay = "Fish"
+frame_progress = 0.443754
+flip_h = true
+
+[node name="Bubble" type="AnimatedSprite2D" parent="Sword Fish"]
+position = Vector2(-23.3109, -2.74286)
+scale = Vector2(0.711217, 0.766129)
+sprite_frames = SubResource("SpriteFrames_y5s36")
+animation = &"Bubble"
+autoplay = "Bubble"
+frame = 2
+frame_progress = 0.292986
